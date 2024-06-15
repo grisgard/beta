@@ -1,0 +1,199 @@
+/* General body styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Fallback font */
+    color: #000; /* Black text color for body */
+    opacity: 0; /* Initially hide content */
+    animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+    position: relative; /* For positioning social links */
+}
+
+/* Container for the main image */
+.image-container {
+    margin-top: 0; /* Move image to the top */
+    opacity: 0; /* Initially hide image */
+    animation: fadeInImage 1s ease forwards; /* Apply fade-in animation to image */
+    animation-delay: 0.2s; /* Delay the start of animation */
+}
+
+/* Styling for banner image */
+.banner-size {
+    width: 150px; /* Smaller size for the banner */
+    height: auto;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+}
+
+/* Styling for new image on about page */
+.new-image {
+    width: 100%; /* Set width to 100% of its container */
+    max-width: 500px; /* Limit the maximum width to 500px */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add margin at the bottom for spacing */
+    opacity: 0; /* Initially hide new image */
+    animation: fadeInImage 1s ease forwards; /* Apply fade-in animation to new image */
+    animation-delay: 0.2s; /* Delay the start of animation */
+}
+
+/* Container for content */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Takes remaining space after image */
+    text-align: center;
+    padding: 20px; /* Add padding for inner content */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* About content container */
+.about-content {
+    display: flex;
+    flex-direction: column; /* Adjusted to column on narrow screens */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 20px;
+    text-align: justify; /* Justify align the text */
+    margin-top: 30px; /* Adjusted margin top for about content */
+    opacity: 0; /* Initially hide about content */
+    animation: fadeInText 1s ease forwards, fadeInImage 1s ease forwards; /* Apply fade-in animations */
+    animation-delay: 0.2s; /* Delay the start of animation */
+    max-width: 600px; /* Limit the maximum width of the about content */
+}
+
+/* Styling for about text */
+.about-text {
+    font-family: 'Comfortaa', sans-serif; /* Apply Comfortaa font */
+    font-size: 20px; /* Font size */
+    font-weight: 400; /* Normal weight */
+    color: #000; /* Black text color */
+    max-width: 88%; /* Adjusted max-width for about text */
+    margin: 0 auto; /* Center align on regular computer screens */
+    text-align: left; /* Left align text within its container */
+    opacity: 0; /* Initially hide about text */
+    animation: fadeInText 1s ease forwards; /* Apply fade-in animation to about text */
+    animation-delay: 0.5s; /* Delay the start of animation */
+}
+
+
+/* Styling for header text */
+.header-text {
+    font-family: 'Comfortaa', sans-serif; /* Apply Comfortaa font */
+    font-size: 18px; /* Font size */
+    font-weight: 700; /* Bold weight */
+    color: #86B649; /* Change header text color to #86B649 */
+    margin: 20px 0; /* Adjust margin */
+    opacity: 0; /* Initially hide header text */
+    animation: fadeInText 1s ease forwards; /* Apply fade-in animation to header text */
+    animation-delay: 0.5s; /* Delay the start of animation */
+}
+
+/* Styling for the "Learn More" button */
+.learn-more-button {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 20px; /* Button font size */
+    padding: 15px 30px; /* Button padding */
+    color: #fff;
+    background-color: #000; /* Button background color */
+    border: none;
+    border-radius: 0; /* Sharp 90-degree edges */
+    cursor: pointer;
+    opacity: 0; /* Initially hide button */
+    animation: fadeInText 1s ease forwards; /* Apply fade-in animation to button */
+    animation-delay: 0.8s; /* Delay the start of animation */
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-button:hover {
+    background-color: #86B649; /* Button hover color */
+}
+
+/* Social links container */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute; /* Position relative to body */
+    bottom: 20px; /* Distance from bottom */
+    left: 20px; /* Distance from left */
+    text-align: left; /* Align links to the left */
+}
+
+/* Instagram link styling */
+.instagram-link,
+.linkedin-link,
+.email-link {
+    font-family: 'Courier New', Courier, monospace; /* Courier New font */
+    font-size: 14px; /* Font size */
+    color: #000; /* Black color */
+    text-decoration: underline; /* Underline style */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 2px; /* Margin top */
+    text-align: left; /* Align links to the left */
+}
+
+.instagram-link:hover,
+.linkedin-link:hover,
+.email-link:hover {
+    color: #86B649; /* Hover color */
+}
+
+/* Fade-in animation for elements */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fade in by changing opacity */
+    }
+}
+
+/* Fade-in animation for images */
+@keyframes fadeInImage {
+    to {
+        opacity: 1; /* Fade in image */
+    }
+}
+
+/* Fade-in animation for text and buttons */
+@keyframes fadeInText {
+    to {
+        opacity: 1; /* Fade in elements */
+    }
+}
+
+/* Fade-out animation for redirection */
+@keyframes fadeOut {
+    to {
+        opacity: 0; /* Fade out animation */
+    }
+}
+
+/* Media query to adjust moon image size for smaller screens */
+@media (max-width: 768px) {
+    .new-image {
+        max-width: 100%; /* Ensure image does not exceed container width */
+        margin-bottom: 20px; /* Add margin at the bottom for spacing */
+    }
+
+    .about-content {
+        margin-top: 20px; /* Adjust margin top for about content */
+    }
+
+    .social-links {
+        position: static; /* Remove absolute positioning to avoid overlap */
+        text-align: center; /* Center align links on narrow screens */
+        margin-top: 20px; /* Add margin top for spacing */
+        left: auto; /* Remove left position */
+        bottom: 0; /* Align links to the bottom */
+        width: 100%; /* Full width for links */
+        padding: 10px; /* Padding for links */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+    }
+
+    .about-text {
+        text-align: left; /* Keep text left aligned on smaller screens */
+        max-width: 100%; /* Full width on smaller screens */
+        margin: 0; /* Remove margin for compact layout */
+    }
+}

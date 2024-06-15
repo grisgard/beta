@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Grisgard Ventures | Home</title>
+    <link rel="icon" href="7.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="image-container">
+        <img src="banner.jpg" alt="logo" class="banner-size" onclick="redirectToHome()">
+    </div>
+
+    <div class="content-container">
+        <div class="header-text">
+            <h1>Investing across various opportunities to achieve diverse financial goals. 🌱<br>Stay tuned for the official launch! 🚀</h1>
+        </div>
+
+        <div class="button-container">
+            <button class="learn-more-button" onclick="fadeOutAndRedirect()">Learn More</button>
+        </div>
+    </div>
+
+    <div class="social-links">
+        <p class="linkedin-link" id="linkedin-link">linkedin</p>
+        <p class="instagram-link" id="instagram-link">instagram</p>
+        <p class="email-link" id="email-link">email</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.body.style.opacity = "1";
+        }
+
+        function fadeOutAndRedirect() {
+            document.body.style.animation = "fadeOut 1s ease forwards";
+            setTimeout(function() {
+                window.location.href = "about.html";
+            }, 1000);
+        }
+
+        function redirectToHome() {
+            window.location.href = "index.html";
+        }
+
+        // Open LinkedIn profile in a new tab
+        document.getElementById("linkedin-link").addEventListener("click", function() {
+            window.open("https://www.linkedin.com/in/huang-wilson/");
+        });
+
+        // Open Instagram profile in a new tab
+        document.getElementById("instagram-link").addEventListener("click", function() {
+            window.open("https://www.instagram.com/grisgard.ventures/");
+        });
+
+        // Open email client
+        document.getElementById("email-link").addEventListener("click", function() {
+            window.location.href = "mailto:wilson.huang@queensu.ca";
+        });
+    </script>
+</body>
+</html>
